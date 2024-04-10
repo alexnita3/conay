@@ -130,8 +130,9 @@ class App(customtkinter.CTk):
         if self.saveConfigOnExit:
             self.saveConfig()
 
-        self.destroy()
-        sys.exit(0)
+        if self.launchToggle.get() == 1:
+            self.destroy()
+            sys.exit(0)
 
     def selectServer(self, _):
         selected = self.serverList.curselection()
